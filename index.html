@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEPH'EDUC — Éducatrice Comportementaliste Canin à Louveciennes</title>
+<meta name="description" content="Stéphanie Englebert, éducatrice comportementaliste canin à Louveciennes. Méthode positive et bienveillante, cours individuels à 60 €/h à domicile ou sur terrain à Mareil-Marly. Bilan offert. 5,0/5 sur 55 avis Google.">
+<meta name="keywords" content="éducateur canin, comportementaliste chien, éducation positive, adoption chien, éducation chiot, Louveciennes, Marly-le-Roi, Mareil-Marly, Le Chesnay, Versailles, Saint-Germain-en-Laye">
+<meta name="theme-color" content="#25615F">
+<!-- Balise canonical à réactiver avec l'URL définitive une fois le domaine choisi :
+     <link rel="canonical" href="https://mon-domaine.fr/"> -->
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="STEPH'EDUC — Éducatrice Comportementaliste Canin">
+<meta property="og:description" content="Éducation canine positive et bienveillante à Louveciennes et ses environs. Bilan offert.">
+<meta property="og:image" content="images/og-image.jpg">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Leaflet : carte interactive de la section Localisation -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Données structurées locales (SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "STEPH'EDUC - Stéphanie Englebert",
+  "description": "Éducatrice comportementaliste canin à Louveciennes. Méthode positive et bienveillante, cours individuels à domicile ou sur terrain d'éducation à Mareil-Marly. Bilan offert.",
+  "slogan": "Des méthodes douces pour des résultats forts",
+  "telephone": "+33675054564",
+  "email": "stephanie_englebert@yahoo.com",
+  "image": "images/logo.png",
+  "priceRange": "60€/h",
+  "areaServed": ["Louveciennes", "Marly-le-Roi", "Mareil-Marly", "Le Chesnay", "Versailles", "Saint-Germain-en-Laye"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Louveciennes",
+    "addressRegion": "Yvelines",
+    "addressCountry": "FR"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "55"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Prestations",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Bilan comportemental",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "description": "Bilan offert, en présentiel ou par téléphone, sans engagement."
+      },
+      {
+        "@type": "Offer",
+        "name": "Cours individuel d'éducation canine",
+        "price": "60",
+        "priceCurrency": "EUR",
+        "description": "Cours individuel facturé 60 € de l'heure, par tranche d'heure, à domicile ou sur le terrain d'éducation de Mareil-Marly."
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.instagram.com/steph.educ.canin",
+    "https://www.facebook.com/steph.educ.educatrice.comportementaliste.canin",
+    "https://share.google/WDFCJBCzrNIzg4BCD"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "À quel âge commencer l'éducation de son chien ?", "acceptedAnswer": { "@type": "Answer", "text": "Le plus tôt possible : un chiot peut commencer dès son arrivée à la maison, vers 2 à 3 mois, la période idéale pour la socialisation. Mais il n'est jamais trop tard : un chien adulte ou senior apprend aussi très bien avec une méthode positive." } },
+    { "@type": "Question", "name": "Combien de séances faut-il ?", "acceptedAnswer": { "@type": "Answer", "text": "Tout dépend du chien, de la difficulté et des objectifs. Certaines situations évoluent en 2 ou 3 séances, d'autres demandent un suivi plus long. Une estimation honnête est donnée dès le bilan offert. Les cours sont facturés 60 € de l'heure." } },
+    { "@type": "Question", "name": "Travaillez-vous avec les chiens réactifs ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. La réactivité envers les chiens, les personnes ou les véhicules fait partie des accompagnements proposés, de façon progressive, sans confrontation et en respectant les émotions du chien." } },
+    { "@type": "Question", "name": "Travaillez-vous à domicile ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui, à domicile dans un rayon d'environ 30 km autour de Louveciennes, ou sur un terrain d'éducation sécurisé à Mareil-Marly, selon ce qui convient le mieux au chien." } },
+    { "@type": "Question", "name": "Que se passe-t-il pendant le premier rendez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "Le bilan est offert et sans engagement, par téléphone ou en présentiel. On échange sur le chien, son histoire, le quotidien et les difficultés, puis sur la façon dont l'accompagnement peut aider. Vous repartez déjà avec des premières pistes." } },
+    { "@type": "Question", "name": "Faut-il venir avec son chien ?", "acceptedAnswer": { "@type": "Answer", "text": "Pour un bilan par téléphone, non. Pour les séances, le chien est au cœur du travail : soit l'éducatrice se déplace chez vous, soit vous venez avec lui sur le terrain de Mareil-Marly." } },
+    { "@type": "Question", "name": "Travaillez-vous avec les chiots ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui : propreté, mordillements, socialisation, apprentissage de la solitude et premiers ordres, pour poser des bases solides dès le départ." } },
+    { "@type": "Question", "name": "Quelle méthode utilisez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "Exclusivement l'éducation positive et bienveillante : renforcement positif, observation et respect du chien, sans outil coercitif ni rapport de force. Formation certifiée auprès de Canidélite." } },
+    { "@type": "Question", "name": "Dans quelles villes intervenez-vous ?", "acceptedAnswer": { "@type": "Answer", "text": "Autour de Louveciennes dans un rayon d'environ 30 km : Marly-le-Roi, Mareil-Marly, Le Chesnay, Versailles, Saint-Germain-en-Laye, Bougival, Croissy-sur-Seine, Chatou, Rueil-Malmaison et environs." } },
+    { "@type": "Question", "name": "Mon chien a-t-il besoin d'éducation même s'il n'a pas de problème particulier ?", "acceptedAnswer": { "@type": "Answer", "text": "Il n'est pas nécessaire d'attendre qu'un problème apparaisse : quelques séances permettent de consolider les bases (rappel, marche en laisse, calme), de mieux comprendre les besoins du chien et de prévenir les difficultés avant qu'elles ne s'installent." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <img src="images/logo.png" alt="Logo STEPH'EDUC" class="logo-image"
+           onerror="this.style.display='none'"
+           onload="this.closest('.logo').classList.add('has-logo')">
+      <span class="logo-fallback">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 6c-3 0-5 3-5 6 0 2 1 3 1 5-3 1-5 4-6 7-1 3-3 5-3 8 0 5 5 8 13 8s13-3 13-8c0-3-2-5-3-8-1-3-3-6-6-7 0-2 1-3 1-5 0-3-2-6-5-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="20" cy="20" r="1.4" fill="currentColor"/>
+            <circle cx="28" cy="20" r="1.4" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="logo-text">
+          <strong>STEPH'EDUC</strong>
+          <em>Éducatrice comportementaliste canin</em>
+        </span>
+      </span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <a href="#besoin">Votre besoin</a>
+      <a href="#methode">Méthode</a>
+      <a href="#apropos">À propos</a>
+      <a href="#avis">Avis</a>
+      <a href="#services">Prestations</a>
+      <a href="#localisation">Localisation</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO (découverte) ================= -->
+  <section class="hero" id="hero">
+    <div class="hero-media photo-frame" data-missing-label="📷 Photo à ajouter : images/hero-bg.jpg">
+      <!-- En portrait (mobile, tablette verticale), la photo carrée de Stéphanie
+           et Roxy garde les sujets entiers ; la photo paysage est réservée aux
+           écrans horizontaux, où elle s'affiche sans être coupée. -->
+      <picture>
+        <source media="(orientation: portrait)" srcset="images/hero-mobile.jpg">
+        <img src="images/hero-bg.jpg" alt="Éducation canine positive en extérieur" fetchpriority="high" onerror="this.closest('.hero-media').classList.add('img-missing')">
+      </picture>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content reveal">
+      <p class="eyebrow">Louveciennes &amp; environs</p>
+      <h1>STEPH'EDUC</h1>
+      <p class="hero-role">Stéphanie Englebert — Éducatrice comportementaliste canin</p>
+      <p class="hero-slogan">Des méthodes douces pour des résultats forts</p>
+      <p class="hero-lead">Je vous accompagne, vous et votre chien, avec bienveillance et à son écoute, pour construire ensemble une relation positive et durable.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Réserver mon bilan offert</a>
+        <a href="#besoin" class="btn btn-ghost">Quel est votre besoin ?</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= L'ESSENTIEL EN UN COUP D'ŒIL ================= -->
+  <section class="stats-bar reveal" aria-label="L'essentiel en un coup d'œil">
+    <div class="container stats-grid">
+      <div class="stat">
+        <span class="stat-number">5,0 ★</span>
+        <span class="stat-label">sur 55 avis Google</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">Offert</span>
+        <span class="stat-label">votre premier bilan, sans engagement</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">60 €</span>
+        <span class="stat-label">le cours individuel d'une heure</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">5 ans</span>
+        <span class="stat-label">d'expérience en éducation positive</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VOTRE BESOIN (problème → solution) ================= -->
+  <section class="section" id="besoin">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Votre situation</p>
+        <h2>Qu'est-ce qui vous amène&nbsp;?</h2>
+        <p class="lead">Choisissez ce qui ressemble le plus à votre quotidien avec votre chien : je vous explique ce qui se passe, et comment je peux vous aider.</p>
+      </div>
+
+      <div class="problem-picker reveal">
+        <div class="problem-grid" role="tablist" aria-label="Choisissez votre situation">
+          <button class="problem-card" role="tab" id="tab-laisse" aria-controls="panel-laisse" aria-selected="true"><span class="problem-emoji" aria-hidden="true">🐕</span><span>Tirage en laisse</span></button>
+          <button class="problem-card" role="tab" id="tab-reactivite" aria-controls="panel-reactivite" aria-selected="false" tabindex="-1"><span class="problem-emoji" aria-hidden="true">🐶</span><span>Réactivité</span></button>
+          <button class="problem-card" role="tab" id="tab-maison" aria-controls="panel-maison" aria-selected="false" tabindex="-1"><span class="problem-emoji" aria-hidden="true">🏠</span><span>Problèmes à la maison</span></button>
+          <button class="problem-card" role="tab" id="tab-rappel" aria-controls="panel-rappel" aria-selected="false" tabindex="-1"><span class="problem-emoji" aria-hidden="true">📣</span><span>Rappel</span></button>
+          <button class="problem-card" role="tab" id="tab-peurs" aria-controls="panel-peurs" aria-selected="false" tabindex="-1"><span class="problem-emoji" aria-hidden="true">😰</span><span>Peurs</span></button>
+          <button class="problem-card" role="tab" id="tab-chiot" aria-controls="panel-chiot" aria-selected="false" tabindex="-1"><span class="problem-emoji" aria-hidden="true">🐾</span><span>Éducation du chiot</span></button>
+          <button class="problem-card" role="tab" id="tab-autre" aria-controls="panel-autre" aria-selected="false" tabindex="-1"><span class="problem-emoji" aria-hidden="true">❓</span><span>Autre</span></button>
+        </div>
+
+        <div class="problem-panel" id="panel-laisse" role="tabpanel" aria-labelledby="tab-laisse">
+          <h3 class="problem-title"><span aria-hidden="true">🐕</span> Tirage en laisse</h3>
+          <div class="problem-block">
+            <p class="problem-label">Ce qui se passe</p>
+            <p>Votre chien avance plus vite que vous, tire sur la laisse et les promenades deviennent fatigantes. Souvent, il est simplement très stimulé par son environnement et n'a jamais appris qu'une laisse détendue pouvait être payante.</p>
+          </div>
+          <div class="problem-block">
+            <p class="problem-label">Ce que l'on peut travailler</p>
+            <p>La marche en laisse détendue, votre attention mutuelle, la gestion des distractions (odeurs, congénères, vélos…) et le choix d'un équipement adapté.</p>
+          </div>
+          <div class="problem-block problem-offer">
+            <p class="problem-label">Ce que je peux vous proposer</p>
+            <p>Un bilan offert pour comprendre pourquoi il tire, puis des séances en extérieur, dans votre quartier ou sur mon terrain de Mareil-Marly, pour retrouver des balades agréables.</p>
+            <a href="#contact" class="btn btn-primary btn-sm">Réserver mon bilan offert</a>
+          </div>
+        </div>
+
+        <div class="problem-panel" id="panel-reactivite" role="tabpanel" aria-labelledby="tab-reactivite" hidden>
+          <h3 class="problem-title"><span aria-hidden="true">🐶</span> Réactivité</h3>
+          <div class="problem-block">
+            <p class="problem-label">Ce qui se passe</p>
+            <p>Il aboie, se dresse ou tire vers d'autres chiens, des personnes ou des véhicules. Derrière ces réactions se cachent souvent de la peur, de la frustration ou un trop-plein d'excitation.</p>
+          </div>
+          <div class="problem-block">
+            <p class="problem-label">Ce que l'on peut travailler</p>
+            <p>La lecture de ses signaux, la gestion des distances, l'apprentissage de comportements alternatifs et la baisse progressive de son niveau de stress.</p>
+          </div>
+          <div class="problem-block problem-offer">
+            <p class="problem-label">Ce que je peux vous proposer</p>
+            <p>Un accompagnement progressif et sans confrontation, à son rythme, pour qu'il gagne en sérénité — et vous aussi pendant les promenades.</p>
+            <a href="#contact" class="btn btn-primary btn-sm">Réserver mon bilan offert</a>
+          </div>
+        </div>
+
+        <div class="problem-panel" id="panel-maison" role="tabpanel" aria-labelledby="tab-maison" hidden>
+          <h3 class="problem-title"><span aria-hidden="true">🏠</span> Problèmes à la maison</h3>
+          <div class="problem-block">
+            <p class="problem-label">Ce qui se passe</p>
+            <p>Destructions, aboiements, malpropreté, difficultés à rester seul ou tensions entre chiens : la vie à la maison devient compliquée pour tout le monde.</p>
+          </div>
+          <div class="problem-block">
+            <p class="problem-label">Ce que l'on peut travailler</p>
+            <p>Les besoins de votre chien (dépense, repos, occupation), l'apprentissage de la solitude, la propreté, les règles de vie et la cohabitation.</p>
+          </div>
+          <div class="problem-block problem-offer">
+            <p class="problem-label">Ce que je peux vous proposer</p>
+            <p>Des séances à votre domicile, là où les difficultés se produisent, pour mettre en place des solutions concrètes adaptées à votre foyer.</p>
+            <a href="#contact" class="btn btn-primary btn-sm">Réserver mon bilan offert</a>
+          </div>
+        </div>
+
+        <div class="problem-panel" id="panel-rappel" role="tabpanel" aria-labelledby="tab-rappel" hidden>
+          <h3 class="problem-title"><span aria-hidden="true">📣</span> Rappel</h3>
+          <div class="problem-block">
+            <p class="problem-label">Ce qui se passe</p>
+            <p>Dès qu'il est détaché, votre chien n'écoute plus : il part suivre une odeur, jouer avec un congénère… et revient quand il l'a décidé.</p>
+          </div>
+          <div class="problem-block">
+            <p class="problem-label">Ce que l'on peut travailler</p>
+            <p>Un rappel fiable et joyeux, construit étape par étape : la motivation, la gestion des distractions et la sécurité en liberté.</p>
+          </div>
+          <div class="problem-block problem-offer">
+            <p class="problem-label">Ce que je peux vous proposer</p>
+            <p>Des séances sur mon terrain d'éducation sécurisé à Mareil-Marly, idéal pour travailler le rappel sereinement avant de passer en milieu ouvert.</p>
+            <a href="#contact" class="btn btn-primary btn-sm">Réserver mon bilan offert</a>
+          </div>
+        </div>
+
+        <div class="problem-panel" id="panel-peurs" role="tabpanel" aria-labelledby="tab-peurs" hidden>
+          <h3 class="problem-title"><span aria-hidden="true">😰</span> Peurs</h3>
+          <div class="problem-block">
+            <p class="problem-label">Ce qui se passe</p>
+            <p>Bruits, inconnus, voitures, nouveaux lieux… votre chien tremble, se fige, fuit ou refuse d'avancer. La peur l'empêche de profiter de son quotidien.</p>
+          </div>
+          <div class="problem-block">
+            <p class="problem-label">Ce que l'on peut travailler</p>
+            <p>Sa confiance en lui, une découverte très progressive de ce qui l'effraie, et la façon dont vous pouvez le rassurer et l'aider.</p>
+          </div>
+          <div class="problem-block problem-offer">
+            <p class="problem-label">Ce que je peux vous proposer</p>
+            <p>Un accompagnement tout en douceur, sans jamais le forcer, pour l'aider à reprendre confiance pas à pas.</p>
+            <a href="#contact" class="btn btn-primary btn-sm">Réserver mon bilan offert</a>
+          </div>
+        </div>
+
+        <div class="problem-panel" id="panel-chiot" role="tabpanel" aria-labelledby="tab-chiot" hidden>
+          <h3 class="problem-title"><span aria-hidden="true">🐾</span> Éducation du chiot</h3>
+          <div class="problem-block">
+            <p class="problem-label">Ce qui se passe</p>
+            <p>Mordillements, propreté, excitation, nuits agitées… L'arrivée d'un chiot est une période merveilleuse, mais aussi pleine de questions.</p>
+          </div>
+          <div class="problem-block">
+            <p class="problem-label">Ce que l'on peut travailler</p>
+            <p>Les bonnes bases dès le départ : socialisation, propreté, apprentissage de la solitude, gestion des émotions et premiers apprentissages.</p>
+          </div>
+          <div class="problem-block problem-offer">
+            <p class="problem-label">Ce que je peux vous proposer</p>
+            <p>Des séances adaptées à son âge pour poser des fondations solides. Mes conseils pour bien démarrer sont aussi <a href="#adoption">juste ici</a>.</p>
+            <a href="#contact" class="btn btn-primary btn-sm">Réserver mon bilan offert</a>
+          </div>
+        </div>
+
+        <div class="problem-panel" id="panel-autre" role="tabpanel" aria-labelledby="tab-autre" hidden>
+          <h3 class="problem-title"><span aria-hidden="true">❓</span> Autre situation</h3>
+          <div class="problem-block">
+            <p class="problem-label">Ce qui se passe</p>
+            <p>Votre situation ne rentre dans aucune case ? C'est normal : chaque chien est unique, et chaque difficulté a son histoire.</p>
+          </div>
+          <div class="problem-block">
+            <p class="problem-label">Ce que l'on peut travailler</p>
+            <p>Nous faisons le point ensemble sur ce qui vous préoccupe, sans jugement, pour comprendre votre chien et vos attentes.</p>
+          </div>
+          <div class="problem-block problem-offer">
+            <p class="problem-label">Ce que je peux vous proposer</p>
+            <p>Le bilan offert est fait pour ça : un premier échange, par téléphone ou en présentiel, pour trouver ensemble la bonne approche.</p>
+            <a href="#contact" class="btn btn-primary btn-sm">Réserver mon bilan offert</a>
+          </div>
+        </div>
+
+        <p class="problem-more">Plusieurs difficultés à la fois&nbsp;? <a href="#diagnostic">Faites le mini-diagnostic en 2&nbsp;minutes&nbsp;→</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MINI-DIAGNOSTIC (orientation) ================= -->
+  <section class="section section-dark" id="diagnostic">
+    <div class="container">
+      <div class="section-head section-head-center reveal">
+        <p class="eyebrow">Mini-diagnostic</p>
+        <h2>Quel accompagnement pour votre chien&nbsp;?</h2>
+        <p class="lead">Dix questions qui s'adaptent à vos réponses, deux minutes. Une orientation personnalisée, pour savoir par où commencer.</p>
+      </div>
+
+      <div class="diag-card reveal" id="diag-card" aria-live="polite">
+        <div class="diag-quiz" id="diag-quiz">
+          <div class="diag-progress" aria-hidden="true"><span id="diag-bar"></span></div>
+          <p class="diag-step" id="diag-step">Question 1 sur 10</p>
+          <p class="diag-question" id="diag-question"></p>
+          <p class="diag-hint" id="diag-hint" hidden></p>
+          <div class="diag-answers" id="diag-answers"></div>
+          <div class="diag-nav">
+            <button type="button" class="diag-back" id="diag-back" hidden>← Question précédente</button>
+            <button type="button" class="btn btn-primary btn-sm diag-next" id="diag-next" hidden>Continuer</button>
+          </div>
+        </div>
+
+        <div class="diag-result" id="diag-result" hidden>
+          <p class="diag-result-label">Votre orientation</p>
+          <h3 class="diag-result-title" id="diag-result-title"></h3>
+
+          <div class="diag-block">
+            <p class="diag-block-title">Voici ce que nous avons identifié</p>
+            <p class="diag-result-text" id="diag-result-text"></p>
+            <ul class="diag-points" id="diag-points"></ul>
+          </div>
+
+          <div class="diag-block">
+            <p class="diag-block-title">Ce qui semble prioritaire</p>
+            <ul class="diag-axes" id="diag-axes"></ul>
+          </div>
+
+          <div class="diag-block diag-block-reco">
+            <p class="diag-block-title">L'accompagnement qui pourrait vous convenir</p>
+            <p class="diag-reco-name" id="diag-reco-name"></p>
+            <p class="diag-reco-text" id="diag-reco-text"></p>
+            <p class="diag-why-intro" id="diag-why-intro">Pourquoi cette orientation&nbsp;:</p>
+            <ul class="diag-why" id="diag-why"></ul>
+            <p class="diag-reco-suite" id="diag-reco-suite"></p>
+          </div>
+
+          <div class="diag-block">
+            <p class="diag-block-title">La prochaine étape</p>
+            <p class="diag-next-text" id="diag-next-text"></p>
+            <div class="diag-actions">
+              <a href="#contact" class="btn btn-primary">Demander mon bilan offert</a>
+              <button type="button" class="btn btn-ghost" id="diag-restart">Recommencer</button>
+            </div>
+            <button type="button" class="diag-back diag-edit" id="diag-edit">← Modifier mes réponses</button>
+          </div>
+
+          <p class="diag-disclaimer">Cette orientation est indicative : dix questions ne remplacent pas un bilan comportemental. Seul un vrai échange, avec votre chien sous les yeux, permet de comprendre ce qui se joue vraiment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ADOPTION (parcours dédié + SEO) ================= -->
+  <section class="section section-alt" id="adoption">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Nouvelle adoption</p>
+        <h2>Vous venez d'adopter un chien&nbsp;?</h2>
+        <p class="lead">Chiot ou chien adulte, les premières semaines comptent énormément. Voici l'essentiel pour bien démarrer ensemble.</p>
+      </div>
+
+      <ol class="adopt-grid" data-carousel>
+        <li class="adopt-step reveal">
+          <h3>L'arrivée à la maison</h3>
+          <p>Offrez-lui un coin calme et rassurant, limitez les visites les premiers jours et laissez-le explorer à son rythme.</p>
+        </li>
+        <li class="adopt-step reveal">
+          <h3>Des règles claires</h3>
+          <p>Fixez en famille des règles simples (canapé, chambre, repas…) et tenez-les dès le premier jour : la constance le rassure.</p>
+        </li>
+        <li class="adopt-step reveal">
+          <h3>Les premières promenades</h3>
+          <p>Des sorties courtes et régulières, dans des lieux calmes. Laissez-le renifler : c'est ainsi qu'il découvre et se détend.</p>
+        </li>
+        <li class="adopt-step reveal">
+          <h3>La socialisation</h3>
+          <p>Faites-lui découvrir bruits, personnes, congénères et lieux, progressivement et toujours de façon positive.</p>
+        </li>
+        <li class="adopt-step reveal">
+          <h3>Le rappel</h3>
+          <p>Commencez tôt, dans un endroit sécurisé, et rendez le retour vers vous toujours agréable — jamais pour le gronder.</p>
+        </li>
+        <li class="adopt-step adopt-step-warn reveal">
+          <h3>Les erreurs à éviter</h3>
+          <p>Punir, en demander trop vite, surexposer un chien craintif ou le laisser seul de longues heures dès l'arrivée.</p>
+        </li>
+      </ol>
+
+      <div class="adopt-cta reveal">
+        <p><strong>Envie d'être accompagné dès le début&nbsp;?</strong> Je vous aide à poser des bases solides, adaptées à votre chien et à votre foyer.</p>
+        <a href="#contact" class="btn btn-primary">Réserver mon bilan offert</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MÉTHODE ================= -->
+  <section class="section" id="methode">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Ma méthode</p>
+        <h2>L'éducation positive, à l'écoute de votre chien</h2>
+        <p class="lead">Pas de rapport de force, pas de contrainte : je m'appuie sur le renforcement positif et l'observation fine de chaque chien pour construire une relation de confiance durable.</p>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar reveal">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none"><path d="M20 6a10 10 0 0 1 10 10c0 6-10 18-10 18S10 22 10 16A10 10 0 0 1 20 6z" stroke="currentColor" stroke-width="1.6"/><circle cx="20" cy="16" r="3" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Observation &amp; écoute</h3>
+          <p>Chaque chien est unique : je prends le temps d'observer son langage corporel, son vécu et ses besoins avant toute action.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none"><path d="M8 22c4-10 10-14 12-14s8 4 12 14c-4 6-8 8-12 8s-8-2-12-8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="20" cy="20" r="2" fill="currentColor"/></svg>
+          </div>
+          <h3>Renforcement positif</h3>
+          <p>Je préfère récompenser les bons comportements plutôt que sanctionner les mauvais : une méthode douce, efficace et respectueuse de votre chien.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none"><path d="M8 14h24M8 20h24M8 26h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Pédagogie pour le maître</h3>
+          <p>Vous repartez avec des clés concrètes et applicables au quotidien, pour poursuivre le travail en toute autonomie.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" width="32" height="32" fill="none"><path d="M20 8v24M8 20h24" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="1.6"/></svg>
+          </div>
+          <h3>Suivi dans la durée</h3>
+          <p>Je ne vous laisse pas seuls après la première séance : je reste disponible pour des bilans réguliers et des ajustements selon vos progrès.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= À PROPOS (confiance) ================= -->
+  <section class="section section-alt" id="apropos">
+    <div class="container about-grid">
+      <div class="about-media photo-frame reveal" data-missing-label="📷 Photo à ajouter : images/portrait-stephanie.jpg">
+        <img src="images/portrait-stephanie.jpg" alt="Portrait de Stéphanie Englebert avec sa chienne Roxy, éducatrice comportementaliste canin" loading="lazy" onerror="this.parentElement.classList.add('img-missing')">
+      </div>
+      <div class="about-text reveal">
+        <p class="eyebrow">À propos</p>
+        <h2>Stéphanie Englebert</h2>
+        <p class="lead">Je suis éducatrice comportementaliste canin certifiée, installée à Louveciennes.</p>
+        <p>Pendant plus de vingt ans, j'ai exercé comme juriste dans le secteur du bâtiment. Une carrière solide, mais un autre chemin m'attendait : celui tracé par Roxy, mon chien, dont l'adoption a tout changé. Grâce à lui, j'ai découvert le monde du comportement canin, m'y suis passionnée, et j'ai décidé d'en faire mon métier.</p>
+        <p>Je me suis formée auprès de <strong>Canidélite</strong>, organisme de formation reconnu, pour devenir éducatrice comportementaliste canin. Aujourd'hui, cela fait 5 ans que je mets à profit cette double expérience — la rigueur d'une longue carrière juridique et une connaissance fine du comportement animal — pour accompagner chaque binôme maître-chien avec précision, patience et bienveillance.</p>
+        <ul class="check-list">
+          <li>Formation certifiée auprès de Canidélite</li>
+          <li>Approche 100% positive, sans coercition</li>
+          <li>Suivi personnalisé pour chaque binôme maître-chien</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALERIE ================= -->
+  <section class="section" id="galerie">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Galerie</p>
+        <h2>Quelques élèves à quatre pattes</h2>
+        <p class="lead">Je partage ici quelques moments avec mes élèves et leurs maîtres, au fil des séances.</p>
+      </div>
+      <div class="gallery-grid" data-carousel>
+        <div class="gallery-item photo-frame" data-missing-label="📷 images/galerie-1.jpg"><img src="images/galerie-1.jpg" alt="Berger australien red merle en séance en extérieur" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <div class="gallery-item photo-frame" data-missing-label="📷 images/galerie-2.jpg"><img src="images/galerie-2.jpg" alt="Chiot berger australien attentif pendant une séance" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <div class="gallery-item photo-frame" data-missing-label="📷 images/galerie-3.jpg"><img src="images/galerie-3.jpg" alt="Récompense positive donnée pendant une séance" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <div class="gallery-item photo-frame" data-missing-label="📷 images/galerie-4.jpg"><img src="images/galerie-4.jpg" alt="Chiot corgi en balade éducative" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <div class="gallery-item photo-frame" data-missing-label="📷 images/galerie-5.jpg"><img src="images/galerie-5.jpg" alt="Jeune teckel à poil long au bord d'un lac" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <div class="gallery-item photo-frame" data-missing-label="📷 images/galerie-6.jpg"><img src="images/galerie-6.jpg" alt="Élève à quatre pattes en séance" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <div class="gallery-item photo-frame" data-missing-label="📷 images/galerie-7.jpg"><img src="images/galerie-7.jpg" alt="Cocker anglais attentif pendant une séance" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"></div>
+        <div class="gallery-item photo-frame" data-missing-label="📷 images/galerie-8.png"><img src="images/galerie-8.png" alt="Berger allemand assis, attentif à son maître" loading="lazy" onerror="this.parentElement.classList.add('img-missing')"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AVIS ================= -->
+  <section class="section section-alt" id="avis">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Avis</p>
+        <h2>Ce qu'en disent les maîtres</h2>
+        <div class="rating-badge">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <strong>5,0/5</strong> <span>— 55 avis Google</span>
+        </div>
+        <a href="https://share.google/WDFCJBCzrNIzg4BCD" target="_blank" rel="noopener" class="btn btn-ghost btn-small">Voir tous les avis sur Google ↗</a>
+      </div>
+
+      <div class="testimonials-grid" data-carousel>
+        <blockquote class="testimonial">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>« Un énorme merci à Stéphanie pour ses précieux conseils, sa disponibilité et sa grande douceur. Notre petite york est très craintive et Stéphanie a su nous montrer comment l'aider, afin de rendre les promenades plus sereines. Elle est adorable avec les chiens, et aussi avec les maîtres qu'elle guide avec bienveillance. Nous sommes conquis. »</p>
+          <footer>
+            <span class="testimonial-avatar" aria-hidden="true">C</span>
+            <cite>Carole D.</cite>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>« Je recommande vivement Stéphanie ! Elle est intervenue en urgence lors de l'arrivée de notre deuxième chien et ses conseils ont été vraiment précieux pour rétablir un climat serein entre eux. Je l'ai ensuite revue pour l'éducation de mon chiot : très patiente, agréable et toujours de bons conseils. Une vraie professionnelle en qui on peut avoir confiance. »</p>
+          <footer>
+            <span class="testimonial-avatar" aria-hidden="true">M</span>
+            <cite>Marlene D.</cite>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>« Stéphanie a été une super entrée dans le monde canin. Elle s'est montrée ultra bienveillante, patiente et à mon écoute à l'accueil de mon chiot fou Willow. J'ai pu, en quelques séances à peine, calmer mes inquiétudes et mettre en place des conseils concrets pour avancer sereinement en autonomie. Je recommande ++ »</p>
+          <footer>
+            <span class="testimonial-avatar" aria-hidden="true">O</span>
+            <cite>Oazig L.</cite>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>« Merci beaucoup Stéphanie pour votre accompagnement, votre douceur et votre patience ! Grâce à votre écoute et à vos conseils, nous avons pu progresser en confiance et mieux comprendre notre BAM. Votre bienveillance et votre professionnalisme ont fait toute la différence. »</p>
+          <footer>
+            <span class="testimonial-avatar" aria-hidden="true">K</span>
+            <cite>David &amp; Klara B.</cite>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>« Stéphanie est pro, passionnée, à l'écoute du chien et des propriétaires. Sa pratique et sa philosophie éducative sont efficaces pour l'éducation du chien et clairement exposées. Toute la famille, du père aux enfants en passant par la mère, recommande. »</p>
+          <footer>
+            <span class="testimonial-avatar" aria-hidden="true">E</span>
+            <cite>Elisabeth L.</cite>
+          </footer>
+        </blockquote>
+        <blockquote class="testimonial">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <p>« Merci à Stéphanie pour son accompagnement auprès de notre chien, Udson. Elle a su prendre son temps pour comprendre nos difficultés, nous expliquer à mieux comprendre et mieux réagir au vu des problèmes qu'on rencontrait. Je recommande vivement ! »</p>
+          <footer>
+            <span class="testimonial-avatar" aria-hidden="true">M</span>
+            <cite>Morgane L.</cite>
+          </footer>
+        </blockquote>
+      </div>
+      <p class="services-note">6 avis choisis parmi les 55 avis 5 étoiles publiés sur <a href="https://share.google/WDFCJBCzrNIzg4BCD" target="_blank" rel="noopener">ma fiche Google</a>.</p>
+    </div>
+  </section>
+
+  <!-- ================= PRESTATIONS (offre) ================= -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Prestations</p>
+        <h2>Un accompagnement individuel, jamais standardisé</h2>
+        <p class="lead">Je ne travaille qu'en cours individuels : chaque chien a son histoire, son rythme et ses besoins. Tout commence par un bilan offert, sans engagement.</p>
+      </div>
+
+      <div class="offer-grid">
+        <div class="offer-card offer-card-featured reveal">
+          <span class="offer-badge">Offert</span>
+          <h3>Le bilan</h3>
+          <p class="offer-price">Gratuit <span>en présentiel ou par téléphone</span></p>
+          <p class="offer-desc">Avant toute chose, on prend le temps d'échanger : votre chien, son histoire, votre quotidien, ce qui vous pose difficulté. Je vous dis ensuite honnêtement comment je peux vous aider — et si je suis la bonne personne pour le faire.</p>
+          <ul class="check-list">
+            <li>Sans engagement, ni de votre côté ni du mien</li>
+            <li>À votre rythme, par téléphone ou en face à face</li>
+            <li>Repartez déjà avec des premières pistes concrètes</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Réserver mon bilan</a>
+        </div>
+
+        <div class="offer-card reveal">
+          <h3>Les cours individuels</h3>
+          <p class="offer-price">60 € <span>de l'heure, par tranche d'heure</span></p>
+          <p class="offer-desc">Des séances en tête-à-tête, construites autour de votre binôme : éducation du chiot, rappel, marche en laisse, peurs, réactivité, cohabitation entre chiens, propreté, gestion des émotions...</p>
+          <ul class="check-list">
+            <li>Durée adaptée à votre chien et à votre objectif</li>
+            <li>Méthode 100&nbsp;% positive, sans contrainte</li>
+            <li>Des clés concrètes à appliquer entre les séances</li>
+          </ul>
+          <a href="#contact" class="btn btn-ghost">En parler ensemble</a>
+        </div>
+      </div>
+
+      <div class="formats reveal">
+        <h3>Deux formats, selon ce qui convient le mieux à votre chien</h3>
+        <div class="format-grid">
+          <div class="format-card">
+            <div class="format-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14 16 5l12 9"/><path d="M7 12.5V26h18V12.5"/><path d="M13 26v-7h6v7"/></svg>
+            </div>
+            <h4>À votre domicile</h4>
+            <p>Je me déplace chez vous et dans votre quartier : c'est souvent là que se jouent les vraies difficultés du quotidien, dans l'environnement réel de votre chien.</p>
+          </div>
+          <div class="format-card">
+            <div class="format-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 27v-9"/><path d="M16 18c0-5 3-8 7-9-1 5-3 8-7 9z"/><path d="M16 20c0-5-3-8-7-9 1 5 3 8 7 9z"/><path d="M8 27h16"/></svg>
+            </div>
+            <h4>Sur mon terrain d'éducation</h4>
+            <p>Un espace de travail dédié à Mareil-Marly, sécurisé et sans distraction, idéal pour travailler le rappel, la concentration ou la sociabilisation en toute sérénité.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= LOCALISATION ================= -->
+  <section class="section section-alt" id="localisation">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Localisation</p>
+        <h2>Est-ce que j'interviens chez vous&nbsp;?</h2>
+        <p class="lead">Basée à Louveciennes, je me déplace à domicile dans les communes alentour — et je dispose d'un terrain d'éducation dédié à <strong>Mareil-Marly</strong> pour les séances qui s'y prêtent mieux. Indiquez votre commune pour le vérifier tout de suite.</p>
+      </div>
+
+      <div class="locate-grid">
+        <div class="locate-checker reveal">
+          <label for="locate-input">Votre commune</label>
+          <div class="locate-form">
+            <div class="locate-field">
+              <input type="text" id="locate-input" autocomplete="off" spellcheck="false"
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="locate-suggest"
+                     placeholder="Ex. Versailles, Paris, Lyon…">
+              <ul class="locate-suggest" id="locate-suggest" role="listbox" aria-label="Communes suggérées" hidden></ul>
+            </div>
+            <button type="button" id="locate-btn" class="btn btn-primary">Vérifier</button>
+          </div>
+          <div id="locate-result" class="locate-result" aria-live="polite" hidden></div>
+          <p class="locate-note">Ma zone d'intervention est indicative, pas une frontière stricte : si votre commune est un peu plus loin, <a href="#contact">contactez-moi</a>, on en parle volontiers.</p>
+        </div>
+
+        <div class="zone-map reveal">
+          <div id="locate-map" class="locate-map" role="region" aria-label="Carte de la zone d'intervention autour de Louveciennes"></div>
+          <div class="map-legend" aria-hidden="true"><span class="legend-zone">Zone habituelle</span><span class="legend-ok">Couverte</span><span class="legend-far">Hors zone</span></div>
+        </div>
+      </div>
+
+      <ul class="tag-list reveal">
+        <li class="tag-strong">★ Terrain d'éducation : Mareil-Marly</li>
+        <li class="tag-ok">✓ Louveciennes</li>
+        <li class="tag-ok">✓ Marly-le-Roi</li>
+        <li class="tag-ok">✓ Le Chesnay</li>
+        <li class="tag-ok">✓ Versailles</li>
+        <li class="tag-ok">✓ Saint-Germain-en-Laye</li>
+        <li>+ les communes alentour</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= FAQ (lever les derniers doutes) ================= -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Questions fréquentes</p>
+        <h2>Vous vous posez sûrement ces questions</h2>
+        <p class="lead">Une autre question ? <a href="https://wa.me/33675054564" target="_blank" rel="noopener">Écrivez-moi sur WhatsApp</a> ou appelez-moi au <a href="tel:+33675054564">06&nbsp;75&nbsp;05&nbsp;45&nbsp;64</a>.</p>
+      </div>
+
+      <div class="faq-grid reveal">
+        <div class="faq-col">
+          <details class="faq-item" name="faq">
+            <summary>À quel âge commencer&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Le plus tôt possible&nbsp;! Un chiot peut commencer dès son arrivée à la maison, vers 2 à 3 mois : c'est la période idéale pour la socialisation. Mais il n'est jamais trop tard : un chien adulte ou senior apprend aussi très bien avec une méthode positive.</p></div>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Combien de séances faut-il&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Tout dépend de votre chien, de la difficulté et de vos objectifs. Certaines situations évoluent en 2 ou 3 séances, d'autres demandent un suivi plus long. Je vous donne une estimation honnête dès le bilan offert. Les cours sont à 60&nbsp;€ de l'heure.</p></div>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Travaillez-vous avec les chiens réactifs&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Oui. La réactivité (aboiements, tension envers les chiens, les personnes ou les véhicules) fait partie de mes accompagnements. Je travaille de façon progressive, sans confrontation, en respectant les émotions de votre chien.</p></div>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Travaillez-vous à domicile&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Oui, je me déplace à domicile dans un rayon d'environ 30 km autour de Louveciennes. Je peux aussi vous accueillir sur mon terrain d'éducation sécurisé à Mareil-Marly, selon ce qui convient le mieux à votre chien.</p></div>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Que se passe-t-il pendant le premier rendez-vous&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Le bilan est offert et sans engagement, par téléphone ou en présentiel. On échange sur votre chien, son histoire, votre quotidien et vos difficultés ; je vous explique ensuite comment je peux vous aider, et vous repartez déjà avec des premières pistes.</p></div>
+          </details>
+        </div>
+        <div class="faq-col">
+          <details class="faq-item" name="faq">
+            <summary>Faut-il venir avec son chien&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Pour un bilan par téléphone, non. Pour les séances, votre chien est évidemment au cœur du travail : soit je viens chez vous, soit vous venez avec lui sur mon terrain de Mareil-Marly.</p></div>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Travaillez-vous avec les chiots&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Avec plaisir&nbsp;! Propreté, mordillements, socialisation, apprentissage de la solitude, premiers ordres… On pose ensemble des bases solides pour toute sa vie. Mes conseils pour bien démarrer sont <a href="#adoption">ici</a>.</p></div>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Quelle méthode utilisez-vous&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Exclusivement l'éducation positive et bienveillante : renforcement positif, observation et respect du chien. Aucun outil coercitif, aucun rapport de force. Formée auprès de Canidélite, je vous transmets aussi les clés pour continuer en autonomie.</p></div>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Dans quelles villes intervenez-vous&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Autour de Louveciennes, dans un rayon d'environ 30 km : Marly-le-Roi, Mareil-Marly, Le Chesnay, Versailles, Saint-Germain-en-Laye, Bougival, Croissy-sur-Seine, Chatou, Rueil-Malmaison… <a href="#localisation">Vérifiez votre commune en un clic</a>.</p></div>
+          </details>
+          <details class="faq-item" name="faq">
+            <summary>Mon chien a-t-il besoin d'éducation même s'il n'a pas de problème particulier&nbsp;?<span class="faq-icon" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Pas besoin d'attendre qu'un problème apparaisse&nbsp;! Quelques séances suffisent souvent à consolider les bases (rappel, marche en laisse, calme), à mieux comprendre ses besoins et à prévenir les difficultés avant qu'elles ne s'installent. Un chien qui comprend ce qu'on attend de lui est un chien plus serein — et votre complicité n'en est que plus forte.</p></div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="section section-alt" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-text reveal">
+        <p class="eyebrow">Contact</p>
+        <h2>Parlons de votre compagnon</h2>
+        <p class="lead">Une question, un chien qui a besoin d'aide, une envie de mieux le comprendre ? Le premier échange est toujours gratuit et sans engagement — écrivez-moi ou appelez-moi directement.</p>
+        <ul class="contact-list">
+          <li>
+            <a class="contact-item contact-item-phone" href="tel:+33675054564">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.4 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              </span>
+              <span class="contact-body">
+                <span class="contact-label">Téléphone</span>
+                <strong>06 75 05 45 64</strong>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-item contact-item-whatsapp" href="https://wa.me/33675054564" target="_blank" rel="noopener">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5c0-.2-.7-1.6-.9-2.2s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4A3.3 3.3 0 0 0 6 9c0 1.4 1.1 2.8 1.2 3a11.6 11.6 0 0 0 4.5 4 14 14 0 0 0 1.5.5 3.6 3.6 0 0 0 1.7.1 2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+              </span>
+              <span class="contact-body">
+                <span class="contact-label">WhatsApp</span>
+                <strong>Écrire sur WhatsApp</strong>
+              </span>
+            </a>
+          </li>
+          <li class="contact-wide">
+            <a class="contact-item contact-item-mail" href="mailto:stephanie_englebert@yahoo.com">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2.5 6.5 9.5 7 9.5-7"/></svg>
+              </span>
+              <span class="contact-body">
+                <span class="contact-label">E-mail</span>
+                <strong>stephanie_englebert@yahoo.com</strong>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-item contact-item-insta" href="https://www.instagram.com/steph.educ.canin" target="_blank" rel="noopener">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+              </span>
+              <span class="contact-body">
+                <span class="contact-label">Instagram</span>
+                <strong>@steph.educ.canin</strong>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-item contact-item-fb" href="https://www.facebook.com/steph.educ.educatrice.comportementaliste.canin" target="_blank" rel="noopener">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M14 9h3V6h-3a4 4 0 0 0-4 4v2H8v3h2v7h3v-7h3l1-3h-4v-2a1 1 0 0 1 1-1z"/></svg>
+              </span>
+              <span class="contact-body">
+                <span class="contact-label">Facebook</span>
+                <strong>STEPH'EDUC</strong>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- L'envoi passe par FormSubmit (formsubmit.co). Avec JavaScript, le
+           message part en arrière-plan et la réponse s'affiche sur la page ;
+           sans JavaScript, le formulaire reste utilisable en envoi classique. -->
+      <form class="contact-form reveal" id="contact-form"
+            action="https://formsubmit.co/stephanie_englebert@yahoo.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Nouveau message depuis le site STEPH'EDUC">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" class="form-honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <p class="form-note">Réponse sous 24&nbsp;à 48&nbsp;h. Pour une demande urgente, appelez-moi au <a href="tel:+33675054564">06&nbsp;75&nbsp;05&nbsp;45&nbsp;64</a>.</p>
+        <div class="form-grid">
+          <div class="field field-name">
+            <label for="f-nom">Nom et prénom</label>
+            <input id="f-nom" type="text" name="Nom" autocomplete="name" placeholder="Marie Dupont" required>
+            <span class="field-error" data-error="Merci d'indiquer votre nom."></span>
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <input id="f-email" type="email" name="email" autocomplete="email" inputmode="email" placeholder="vous@exemple.fr" required>
+            <span class="field-error" data-error="Adresse e-mail incomplète ou invalide."></span>
+          </div>
+          <div class="field">
+            <label for="f-tel">Téléphone <span class="form-optional">facultatif</span></label>
+            <input id="f-tel" type="tel" name="Téléphone" autocomplete="tel" inputmode="tel" placeholder="06 00 00 00 00">
+            <span class="field-error"></span>
+          </div>
+          <div class="field field-full">
+            <label for="f-msg">Votre message</label>
+            <textarea id="f-msg" name="Message" rows="5" placeholder="Parlez-moi de votre chien et de ce qui vous amène…" required></textarea>
+            <span class="field-error" data-error="Écrivez quelques mots sur votre chien ou votre demande."></span>
+          </div>
+        </div>
+        <div class="form-footer">
+          <p class="form-legal">Vos coordonnées servent uniquement à vous répondre.</p>
+          <button type="submit" class="btn btn-primary" id="form-submit">Envoyer le message</button>
+        </div>
+        <div class="form-status" id="form-status" role="status" hidden></div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <strong>STEPH'EDUC</strong>
+      <p>Éducatrice comportementaliste canin — Louveciennes et environs</p>
+    </div>
+    <nav class="footer-nav" aria-label="Liens de pied de page">
+      <a href="#besoin">Votre besoin</a>
+      <a href="#methode">Méthode</a>
+      <a href="#apropos">À propos</a>
+      <a href="#services">Prestations</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a href="legal.html">Mentions légales</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/steph.educ.canin" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/steph.educ.educatrice.comportementaliste.canin" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> STEPH'EDUC — Stéphanie Englebert. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<!-- Bouton WhatsApp flottant, toujours accessible -->
+<a class="wa-float" href="https://wa.me/33675054564" target="_blank" rel="noopener" aria-label="Écrire à Stéphanie sur WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5c0-.2-.7-1.6-.9-2.2s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4A3.3 3.3 0 0 0 6 9c0 1.4 1.1 2.8 1.2 3a11.6 11.6 0 0 0 4.5 4 14 14 0 0 0 1.5.5 3.6 3.6 0 0 0 1.7.1 2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.2-.2-.4-.3z"/><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-2.9.8.8-2.8-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  <span class="wa-float-label">Une question&nbsp;? WhatsApp</span>
+</a>
+
+<button id="back-to-top" class="back-to-top" aria-label="Revenir en haut de la page">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="js/diagnostic.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
