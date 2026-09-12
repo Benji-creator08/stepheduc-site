@@ -617,25 +617,25 @@
     {
       id: 1,
       name: "Des conseils et les premières bases",
-      text: "Dans une situation comme la vôtre, quelques repères bien ciblés suffisent souvent à débloquer les choses. Le bilan offert — par téléphone ou en présentiel — permet déjà de répondre à l'essentiel et de repartir avec des exercices adaptés à votre chien.",
-      suite: "Si vous souhaitez aller plus loin, une ou deux séances individuelles (60 € de l'heure) suffisent généralement à installer de bonnes habitudes."
+      text: "Dans une situation comme la vôtre, quelques repères bien ciblés suffisent souvent à débloquer les choses. Le bilan permet de voir votre chien en situation et de repartir avec des exercices vraiment adaptés à lui.",
+      suite: "Si vous souhaitez aller plus loin, une ou deux séances individuelles suffisent généralement à installer de bonnes habitudes."
     },
     {
       id: 2,
       name: "Un accompagnement éducatif",
       text: "Ce que vous décrivez se travaille très bien en séances individuelles régulières (60 € de l'heure), avec des exercices à poursuivre entre deux rendez-vous. On avance par étapes, en commençant par ce qui vous gêne le plus au quotidien.",
-      suite: "Le bilan offert permet d'abord de définir ensemble le point de départ et le rythme."
+      suite: "Le bilan permet d'abord de définir ensemble le point de départ et le rythme."
     },
     {
       id: 3,
       name: "Un accompagnement personnalisé",
       text: "Les éléments que vous décrivez se répondent entre eux : travailler un point sans tenir compte des autres donne rarement un résultat durable. Un accompagnement individuel construit sur mesure (60 € de l'heure, à votre domicile ou sur le terrain de Mareil-Marly) permet d'avancer dans le bon ordre, au rythme de votre chien.",
-      suite: "Tout commence par le bilan offert, qui sert à poser le plan de travail."
+      suite: "Tout commence par le bilan, qui sert à poser le plan de travail."
     },
     {
       id: 4,
       name: "Un bilan approfondi, en priorité",
-      text: "Avant tout exercice technique, la priorité est de comprendre ce qui se joue vraiment pour votre chien et de sécuriser le quotidien. Le bilan, offert et sans engagement, est justement fait pour cela : prendre le temps d'observer, d'échanger, puis de construire un plan progressif.",
+      text: "Avant tout exercice technique, la priorité est de comprendre ce qui se joue vraiment pour votre chien et de sécuriser le quotidien. Le bilan est justement fait pour cela : prendre le temps d'observer, d'écouter, puis de construire un plan progressif.",
       suite: "Les séances individuelles (60 € de l'heure, à domicile ou sur le terrain de Mareil-Marly) prennent ensuite le relais, à un rythme adapté à ce qui aura été observé."
     }
   ];
@@ -919,7 +919,7 @@
 
   function buildNextStep(profile, reading) {
     var goal = profile.objectif ? profile.objectif.frag : "avancer sereinement";
-    var base = "Le bilan est offert et sans engagement : il se fait en présentiel ou par téléphone, et c'est le moment d'évoquer " + profile.branch.label;
+    var base = "Ce premier rendez-vous d'une heure permet de prendre le temps d'observer votre chien, de comprendre votre quotidien et de préciser ensemble les besoins à travailler en priorité. C'est le moment d'évoquer " + profile.branch.label;
     if (reading.level.id >= 3) {
       base += " sans rien laisser de côté";
     }

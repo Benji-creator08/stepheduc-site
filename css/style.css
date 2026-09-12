@@ -223,6 +223,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) - 2px); }
 }
 .hero-lead { color: rgba(255,255,255,0.88); max-width: 480px; font-size: 1.1rem; margin-bottom: 34px; }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+/* Tarif du bilan, lisible sans alourdir le hero */
+.hero-price { margin-top: 16px; font-size: 0.92rem; font-weight: 500; color: rgba(255,255,255,0.85); }
 .hero .btn-ghost { border-color: rgba(255,255,255,0.7); color: #fff; }
 .hero .btn-ghost:hover { background: #fff; color: var(--color-primary-dark); }
 .stars { color: var(--color-gold); letter-spacing: 2px; font-size: 1.05rem; }
@@ -388,6 +390,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) - 2px); }
 .diag-reco-suite { margin-top: 14px; font-size: 0.92rem; color: var(--color-text-soft); font-style: italic; }
 .diag-next-text { color: var(--color-text-soft); margin-bottom: 18px; }
 .diag-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+/* Tarif rappelé sous le bouton du diagnostic, sans ambiguïté possible */
+.diag-price { margin-top: 12px; font-size: 0.85rem; font-weight: 500; color: var(--color-text-soft); }
 .diag-edit { display: inline-block; margin-top: 14px; }
 .diag-disclaimer { font-size: 0.8rem; color: var(--color-text-soft); border-top: 1px solid var(--color-border); padding-top: 14px; }
 
@@ -967,19 +971,25 @@ a.contact-item:hover .contact-body strong { color: var(--color-accent-dark); }
   .testimonial { flex-basis: 86%; padding: 28px 22px 22px; }
   .testimonial p { font-size: 0.93rem; }
 
-  /* Bilan offert + cours : côte à côte, version compacte (le détail est
-     repris par la section « Votre besoin » et la FAQ) */
-  .offer-grid { gap: 12px; }
-  .offer-card { padding: 26px 14px 16px; border-radius: 12px; }
+  /* Bilan + cours l'un sous l'autre : en demi-colonne, il ne restait que
+     ~164 px, le titre du bilan tombait sur 3 lignes et son tarif sur 4.
+     C'est la carte qui porte le message principal, elle doit rester lisible
+     d'un coup d'œil sur téléphone. */
+  .offer-grid { grid-template-columns: 1fr; gap: 16px; }
+  .offer-card { padding: 26px 20px 20px; border-radius: 12px; }
   .offer-card:hover { transform: none; }
   .offer-badge { top: -11px; left: 14px; font-size: 0.62rem; padding: 4px 10px; }
   .offer-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
   .offer-price { font-size: 1.6rem; margin-bottom: 12px; }
   .offer-price span { font-size: 0.72rem; line-height: 1.35; }
-  .offer-desc { display: none; }
+  /* On masque le descriptif des cours (le titre et le tarif suffisent), mais
+     on garde celui du bilan : c'est lui qui explique la valeur de ce premier
+     rendez-vous, et il doit rester lisible sur téléphone. */
+  .offer-card:not(.offer-card-featured) .offer-desc { display: none; }
+  .offer-card-featured .offer-desc { font-size: 0.84rem; line-height: 1.5; margin-bottom: 14px; }
   .offer-card .check-list { gap: 8px; margin-bottom: 16px; }
   .offer-card .check-list li { font-size: 0.8rem; line-height: 1.45; padding-left: 17px; }
-  .offer-card .btn { align-self: stretch; padding: 11px 8px; font-size: 0.8rem; }
+  .offer-card .btn { align-self: stretch; padding: 13px 10px; font-size: 0.85rem; }
 
   .formats { margin-top: 34px; }
   .formats > h3 { font-size: 1.08rem; margin-bottom: 16px; }
