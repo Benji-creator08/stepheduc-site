@@ -11,10 +11,11 @@
    - Bouton « retour en haut »
    ============================================================ */
 
-/* --- Base de communes autour de Louveciennes ---
-   Coordonnées approximatives (usage indicatif uniquement, voir la note
-   affichée à côté du vérificateur). Pas d'API/clé nécessaire : la distance
-   est calculée localement avec la formule de Haversine. */
+/* --- Repli hors ligne : communes des deux secteurs d'intervention ---
+   Utilisé uniquement si geo.api.gouv.fr ne répond pas ; la recherche normale
+   couvre toutes les communes de France. Coordonnées approximatives (usage
+   indicatif, voir la note affichée à côté du vérificateur). Pas d'API/clé
+   nécessaire : la distance est calculée localement (formule de Haversine). */
 const LOUVECIENNES = { lat: 48.8637, lng: 2.1246 };
 const TOWNS = [
   { name: "Louveciennes", lat: 48.8637, lng: 2.1246 },
@@ -71,7 +72,15 @@ const TOWNS = [
   { name: "Rambouillet", lat: 48.6444, lng: 1.8286 },
   { name: "Houdan", lat: 48.7997, lng: 1.5975 },
   { name: "Dreux", lat: 48.7358, lng: 1.3667 },
-  { name: "Chartres", lat: 48.4469, lng: 1.4894 }
+  { name: "Chartres", lat: 48.4469, lng: 1.4894 },
+  /* Secteur du Rayol-Canadel-sur-Mer (Var) */
+  { name: "Rayol-Canadel-sur-Mer", lat: 43.1594, lng: 6.4625 },
+  { name: "Le Lavandou", lat: 43.1373, lng: 6.3672 },
+  { name: "Cavalaire-sur-Mer", lat: 43.1736, lng: 6.5306 },
+  { name: "La Croix-Valmer", lat: 43.2069, lng: 6.5686 },
+  { name: "Bormes-les-Mimosas", lat: 43.1512, lng: 6.3423 },
+  { name: "Saint-Tropez", lat: 43.2727, lng: 6.6407 },
+  { name: "Hyères", lat: 43.1204, lng: 6.1286 }
 ];
 
 function haversineKm(a, b) {
@@ -332,18 +341,44 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --- Vérificateur de zone d'intervention ---
      Recherche : service officiel geo.api.gouv.fr (toutes les communes de
      France, gratuit, sans clé). Si le service ne répond pas, on se rabat sur
-     la liste locale TOWNS. Le résultat vient uniquement de la distance réelle
-     entre les coordonnées de la commune et Louveciennes : ZONE_KM est un
-     repère technique interne, jamais affiché comme une règle stricte. */
+     la liste locale TOWNS. Le résultat vient uniquement des distances réelles
+     entre les coordonnées de la commune et chacun des secteurs : les rayons
+     sont des repères techniques internes, jamais affichés et jamais présentés
+     comme une frontière stricte. */
   const locateInput = document.getElementById('locate-input');
   const locateBtn = document.getElementById('locate-btn');
   const locateResult = document.getElementById('locate-result');
   const suggestEl = document.getElementById('locate-suggest');
   const mapEl = document.getElementById('locate-map');
-  const ZONE_KM = 30;
-  const NEAR_EDGE_KM = 50;
   const GEO_API = 'https://geo.api.gouv.fr/communes';
   const TERRAIN = { lat: 48.8853, lng: 2.0796 };
+
+  /* Les deux secteurs d'intervention. `radiusKm` sert à décider du verdict,
+     `nearEdgeKm` à nuancer juste au-delà ; aucun des deux n'est affiché.
+     Ajouter un secteur ici suffit : verdict, carte et cadrage suivent. */
+  const SECTORS = [
+    {
+      id: 'louveciennes', label: 'Louveciennes',
+      lat: LOUVECIENNES.lat, lng: LOUVECIENNES.lng,
+      radiusKm: 30, nearEdgeKm: 50,
+      color: '#35807F', closeZoom: 11
+    },
+    {
+      id: 'rayol', label: 'Rayol-Canadel-sur-Mer',
+      lat: 43.1594, lng: 6.4625,
+      radiusKm: 10, nearEdgeKm: 20,
+      color: '#C9A227', closeZoom: 12
+    }
+  ];
+
+  /* Classement des secteurs par pertinence : on compare la distance au rayon
+     propre à chaque secteur, sinon le plus vaste l'emporterait toujours. */
+  const rankSectors = commune => SECTORS
+    .map(s => {
+      const km = haversineKm(s, commune);
+      return { sector: s, km: km, inside: km <= s.radiusKm, near: km <= s.nearEdgeKm, ratio: km / s.radiusKm };
+    })
+    .sort((a, b) => a.ratio - b.ratio);
 
   const showLocateResult = (kind, iconChar, html) => {
     locateResult.className = 'locate-result is-' + kind;
@@ -358,19 +393,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mapEl && window.L) {
     const L = window.L;
+    const homeIcon = () => L.divIcon({ className: '', html: '<div class="map-pin is-home"></div>', iconSize: [18, 18], iconAnchor: [3, 18] });
+    /* Vue initiale sur le secteur principal : les deux secteurs sont bien trop
+       éloignés pour être lisibles ensemble. La carte se recentre à la
+       recherche sur celui qui concerne réellement le visiteur. */
     map = L.map(mapEl, { scrollWheelZoom: false, dragging: !L.Browser.mobile, tap: false, zoomSnap: 0.5 })
       .setView([LOUVECIENNES.lat, LOUVECIENNES.lng], 9);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
       maxZoom: 18, subdomains: 'abcd',
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(map);
-    L.circle([LOUVECIENNES.lat, LOUVECIENNES.lng], {
-      radius: ZONE_KM * 1000, color: '#35807F', weight: 1.5, opacity: 0.7, dashArray: '6 6',
-      fillColor: '#35807F', fillOpacity: 0.07, interactive: false
-    }).addTo(map);
-    L.marker([LOUVECIENNES.lat, LOUVECIENNES.lng], { icon: L.divIcon({ className: '', html: '<div class="map-pin is-home"></div>', iconSize: [18, 18], iconAnchor: [3, 18] }) })
-      .addTo(map).bindTooltip('Louveciennes', { direction: 'top', offset: [6, -16] });
-    L.marker([TERRAIN.lat, TERRAIN.lng], { icon: L.divIcon({ className: '', html: '<div class="map-pin is-home"></div>', iconSize: [18, 18], iconAnchor: [3, 18] }) })
+    SECTORS.forEach(s => {
+      L.circle([s.lat, s.lng], {
+        radius: s.radiusKm * 1000, color: s.color, weight: 1.5, opacity: 0.7, dashArray: '6 6',
+        fillColor: s.color, fillOpacity: 0.07, interactive: false
+      }).addTo(map);
+      L.marker([s.lat, s.lng], { icon: homeIcon() })
+        .addTo(map).bindTooltip(s.label, { direction: 'top', offset: [6, -16] });
+    });
+    L.marker([TERRAIN.lat, TERRAIN.lng], { icon: homeIcon() })
       .addTo(map).bindTooltip('Terrain d\'éducation — Mareil-Marly', { direction: 'top', offset: [6, -16] });
     const refresh = () => map.invalidateSize();
     window.addEventListener('resize', refresh);
@@ -383,7 +424,10 @@ document.addEventListener('DOMContentLoaded', () => {
     mapEl.innerHTML = '<iframe title="Carte centrée sur Louveciennes" src="https://www.google.com/maps?q=Louveciennes&output=embed" width="100%" height="100%" style="border:0" loading="lazy"></iframe>';
   }
 
-  const showOnMap = (commune, ok) => {
+  /* Cadrage : on ne montre jamais les deux secteurs à la fois (~700 km les
+     séparent), uniquement celui qui concerne la recherche, avec la commune
+     trouvée — même hors secteur, pour que la situation reste lisible. */
+  const showOnMap = (commune, ok, sector) => {
     if (!map) return;
     const L = window.L;
     if (cityLayer) cityLayer.remove();
@@ -393,9 +437,20 @@ document.addEventListener('DOMContentLoaded', () => {
       L.marker([commune.lat, commune.lng], { icon: pin(ok ? 'is-ok' : 'is-far'), zIndexOffset: 1000 })
         .bindTooltip(commune.name, { direction: 'top', offset: [8, -24], permanent: true })
     ]).addTo(map);
-    const same = haversineKm(LOUVECIENNES, commune) < 1;
-    if (same) map.setView([commune.lat, commune.lng], 11);
-    else map.fitBounds([[LOUVECIENNES.lat, LOUVECIENNES.lng], [commune.lat, commune.lng]], { padding: [50, 50], maxZoom: 11 });
+    const pad = mapEl.clientHeight && mapEl.clientHeight < 320 ? 26 : 50;
+    /* Recadrage sans animation : d'un secteur à l'autre le saut dépasse
+       700 km, et Leaflet laisse alors la vue figée si la transition CSS
+       n'aboutit pas (onglet en arrière-plan, fenêtre masquée). Instantané,
+       c'est à la fois fiable et bien plus lisible qu'un long balayage. */
+    if (haversineKm(sector, commune) < 1) {
+      map.setView([commune.lat, commune.lng], sector.closeZoom, { animate: false });
+    } else {
+      /* Emprise calculée en coordonnées géographiques (et non depuis le
+         cercle Leaflet, dont la géométrie en pixels dépend du zoom courant) :
+         le secteur et la commune tiennent ainsi toujours dans le cadre. */
+      const zone = L.latLng(sector.lat, sector.lng).toBounds(sector.radiusKm * 2000);
+      map.fitBounds(zone.extend([commune.lat, commune.lng]), { padding: [pad, pad], maxZoom: 11, animate: false });
+    }
   };
 
   /* Recherche de communes */
@@ -411,8 +466,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchCommunes = async q => {
     if (lastController) lastController.abort();
     lastController = new AbortController();
+    /* Les claviers de téléphone et les traitements de texte produisent une
+       apostrophe courbe (’) que l'API ne reconnaît pas : on la ramène à
+       l'apostrophe droite, sinon « L’Étang-la-Ville » ne trouve rien. */
+    const query = q.replace(/[‘’ʼ]/g, "'");
     try {
-      const url = GEO_API + '?nom=' + encodeURIComponent(q) + '&fields=nom,code,centre,codeDepartement,codesPostaux&boost=population&limit=6';
+      const url = GEO_API + '?nom=' + encodeURIComponent(query) + '&fields=nom,code,centre,codeDepartement,codesPostaux&boost=population&limit=6';
       const response = await fetch(url, { signal: lastController.signal });
       if (!response.ok) throw new Error('service');
       const list = await response.json();
@@ -466,23 +525,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 220);
   };
 
-  /* Verdict — la distance sert au calcul, elle n'est jamais affichée. */
+  /* « Le Lavandou » → « au Lavandou », « Les Mureaux » → « aux Mureaux » :
+     sans cela, on écrirait « j'interviens à Le Lavandou ». */
+  const aCommune = nom => {
+    if (/^Le\s/.test(nom)) return 'au ' + nom.slice(3);
+    if (/^Les\s/.test(nom)) return 'aux ' + nom.slice(4);
+    return 'à ' + nom;
+  };
+
+  /* Verdict — les distances servent au calcul, elles ne sont jamais affichées. */
   function chooseCommune(c) {
     closeSuggest();
     locateInput.value = c.name;
-    const d = haversineKm(LOUVECIENNES, c);
-    const ok = d <= ZONE_KM;
-    const name = escapeHtml(c.name) + (c.dept ? ' (' + escapeHtml(c.dept) + ')' : '');
-    if (d < 1) {
-      showLocateResult('ok', '✓', '<strong>Oui&nbsp;!</strong> Louveciennes, c\'est ici que tout commence.');
+    const ranked = rankSectors(c);
+    const inside = ranked.filter(r => r.inside);
+    const best = ranked[0];
+    const ok = inside.length > 0;
+    const dept = c.dept ? ' (' + escapeHtml(c.dept) + ')' : '';
+    const name = escapeHtml(c.name) + dept;
+    const nameA = aCommune(escapeHtml(c.name)) + dept;
+
+    if (inside.length > 1) {
+      // Cas théorique (les secteurs ne se recouvrent pas), traité proprement.
+      showLocateResult('ok', '✓', '<strong>Bonne nouvelle : j\'interviens ' + nameA + '.</strong> Votre commune est couverte par mes deux secteurs — nous verrons ensemble la formule la plus pratique pour vous.');
     } else if (ok) {
-      showLocateResult('ok', '✓', '<strong>Bonne nouvelle : j\'interviens à ' + name + '.</strong> Votre commune fait partie de mon secteur habituel — je me déplace à votre domicile, et mon terrain d\'éducation reste à votre disposition.');
-    } else if (d <= NEAR_EDGE_KM) {
-      showLocateResult('far', '!', '<strong>' + name + ' est juste en dehors de mon secteur habituel.</strong> Ce n\'est pas une frontière stricte : <a href="#contact">contactez-moi</a>, un déplacement reste souvent possible.');
+      const s = inside[0].sector;
+      if (inside[0].km < 1) {
+        showLocateResult('ok', '✓', s.id === 'rayol'
+          ? '<strong>Oui&nbsp;!</strong> Le Rayol-Canadel, c\'est justement mon second point d\'attache.'
+          : '<strong>Oui&nbsp;!</strong> Louveciennes, c\'est ici que tout commence.');
+      } else if (s.id === 'rayol') {
+        showLocateResult('ok', '✓', '<strong>Bonne nouvelle : j\'interviens également ' + nameA + '.</strong> Votre commune fait partie de mon secteur du Rayol-Canadel-sur-Mer, où je me déplace à domicile.');
+      } else {
+        showLocateResult('ok', '✓', '<strong>Bonne nouvelle : j\'interviens ' + nameA + '.</strong> Votre commune fait partie de mon secteur habituel — je me déplace à votre domicile, et mon terrain d\'éducation reste à votre disposition.');
+      }
+    } else if (best.near) {
+      showLocateResult('far', '!', '<strong>' + name + ' est juste en dehors de mes secteurs habituels.</strong> Ce n\'est pas une frontière stricte : <a href="#contact">contactez-moi</a>, un déplacement reste souvent possible.');
     } else {
-      showLocateResult('far', '✕', '<strong>' + name + ' est en dehors de mon secteur habituel d\'intervention.</strong> Le mieux est de <a href="#contact">me contacter directement</a> pour vérifier ensemble si je peux me déplacer jusqu\'à vous. Vous pouvez aussi venir travailler sur mon terrain d\'éducation à Mareil-Marly.');
+      showLocateResult('far', '✕', '<strong>' + name + ' se situe en dehors de mes secteurs habituels d\'intervention.</strong> Le mieux est de <a href="#contact">me contacter directement</a> pour vérifier ensemble si je peux me déplacer jusqu\'à vous. Vous pouvez aussi venir travailler sur mon terrain d\'éducation à Mareil-Marly.');
     }
-    showOnMap(c, ok);
+    showOnMap(c, ok, (ok ? inside[0] : best).sector);
   }
 
   const bestMatch = (q, list) => list.find(c => normalize(c.name) === normalize(q)) || list[0];
